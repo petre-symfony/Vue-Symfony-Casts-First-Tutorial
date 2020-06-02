@@ -1,8 +1,9 @@
 import Vue from 'vue';
+import App from './pages/products';
 
 new Vue({
   el: '#app',
   render(h) {
-    return Vue.compile(template).render.call(this, h);
+    return h(App);
   },
 });
