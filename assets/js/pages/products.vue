@@ -42,9 +42,7 @@
           </div>
         </div>
         <div class="row">
-          <span class="p-3">
-            {{ legend }}
-          </span>
+          <legend-component />
         </div>
       </div>
     </div>
