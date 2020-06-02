@@ -54,11 +54,9 @@
 <script>
   export default {
     name: 'Products',
-    data() {
-      return {
-        legend: 'Shipping takes 10-12 weeks, and products probably won\'t work'
-      };
-    }
+    data: () => ({
+      legend: 'Shipping takes 10-12 weeks, and products probably won\'t work'
+    }),
   };
 </script>
 
