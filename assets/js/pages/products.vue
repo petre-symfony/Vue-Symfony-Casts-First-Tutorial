@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <aside class="col-xs-12 col-3">
-        <div class="p-3 mb-5">
+        <div class="sidebar p-3 mb-5">
           <h5 class="text-center">
             Categories
           </h5>
@@ -61,3 +61,11 @@
     }
   };
 </script>
+
+<style>
+  .sidebar {
+    border: 1px solid #efefee;
+    box-shadow: 0 0 7px 4px #efefee;
+    border-radius: 5px;
+  }
+</style>
