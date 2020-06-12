@@ -1,7 +1,7 @@
 <template>
   <div :class="[$style.sidebar, 'p-3', 'mb-5']">
     <h5 class="text-center">
-      Categories!!
+      Categories
     </h5>
     <ul class="nav flex-column mb4">
       <li class="nav-item">
@@ -10,17 +10,13 @@
             href="/"
         >All Products</a>
       </li>
-      <li class="nav-item">
+      <li
+          v-for="category in categories"
+          class="nav-item">
         <a
             class="nav-link"
-            href="#"
-        >Category A</a>
-      </li>
-      <li class="nav-item">
-        <a
-            class="nav-link"
-            href="#"
-        >Category B</a>
+            :href="category.link"
+        >{{ category.name }}</a>
       </li>
     </ul>
   </div>
