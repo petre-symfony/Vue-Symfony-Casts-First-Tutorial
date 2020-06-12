@@ -28,7 +28,21 @@
 
 <script>
   export default {
-    name: 'Sidebar'
+    name: 'Sidebar',
+    data(){
+      return {
+        categories: [
+          {
+            name: 'Dot Matrix Printers',
+            link: '#'
+          },
+          {
+            name: 'Iomega Zip Drives',
+            link: '#'
+          }
+        ]
+      }
+    }
   }
 </script>
 
