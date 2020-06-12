@@ -42,7 +42,7 @@
           </div>
         </div>
         <div class="row">
-          <legend-component />
+          <legend-component :title="legend" />
         </div>
       </div>
     </div>
@@ -66,9 +66,15 @@
 </script>
 
 
-<style lang="scss">
+<style lang="scss" module>
   @import '../../scss/components/light-component.scss';
   .sidebar {
     @include light-component;
+
+    ul {
+      li a:hover {
+        background: $blue-component-link-hover
+      }
+    }
   }
 </style>
