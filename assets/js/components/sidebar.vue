@@ -33,7 +33,7 @@
 </script>
 
 <style lang="scss" module>
-  @import '../../scss/components/light-component.scss';
+  @import '~styles/components/light-component.scss';
   .sidebar {
     @include light-component;
 
