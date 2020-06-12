@@ -4,7 +4,7 @@
       <aside class="col-xs-12 col-3">
         <div :class="[$style.sidebar, 'p-3', 'mb-5']">
           <h5 class="text-center">
-            Categories!!
+            Categories
           </h5>
           <ul class="nav flex-column mb4">
             <li class="nav-item">
