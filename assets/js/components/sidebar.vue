@@ -28,6 +28,7 @@
     <div class="d-flex justify-content-end">
       <button
           class="btn btn-secondary btn-sm"
+          v-on:click="toggleCollapsed"
           v-text="collapsed ? '>>' : '<< Collapse'"
       />
     </div>
@@ -50,6 +51,11 @@
             link: '#'
           }
         ]
+      }
+    },
+    methods: {
+      toggleCollapsed(){
+        console.log('CLICKED!');
       }
     }
   }
