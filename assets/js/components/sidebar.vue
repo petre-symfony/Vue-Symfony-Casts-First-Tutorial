@@ -28,9 +28,8 @@
     <div class="d-flex justify-content-end">
       <button
           class="btn btn-secondary btn-sm"
-      >
-        {{ collapsed ? '>>' : '<< Collapse'}}
-      </button>
+          v-text="collapsed ? '>>' : '<< Collapse'"
+      />
     </div>
   </div>
 </template>
