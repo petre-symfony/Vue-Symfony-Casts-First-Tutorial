@@ -54,7 +54,7 @@
       }
     },
     created(){
-      console.log(this);
+      console.log(this, this.categories);
     },
     props: {
       testProp: {
