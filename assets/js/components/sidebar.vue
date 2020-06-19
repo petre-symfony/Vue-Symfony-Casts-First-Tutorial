@@ -5,6 +5,7 @@
   >
     <h5 class="text-center">
       Categories
+      {{ _uid }}
     </h5>
     <ul class="nav flex-column mb4">
       <li class="nav-item">
@@ -51,6 +52,15 @@
             link: '#'
           }
         ]
+      }
+    },
+    created(){
+      console.log(this);
+    },
+    props: {
+      testProp: {
+        type: String,
+        default: 'A am the default value'
       }
     },
     methods: {
