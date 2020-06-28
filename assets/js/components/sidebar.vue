@@ -72,6 +72,8 @@
     methods: {
       toggleCollapsed(){
         this.collapsed = !this.collapsed;
+
+        console.log(this.componentClass);
       }
     }
   }
