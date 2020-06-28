@@ -1,12 +1,13 @@
 <template>
   <div
       :class="{
-        $style.component: true,
+        [$style.component]: true,
+        [$style.collapsed]: collapsed,
         'p-3': true,
         'mb-5': true,
       }"
   >
-    <div v-show="!collapsed">
+    <div v-if="!collapsed">
       <h5 class="text-center">
         Categories
       </h5>
