@@ -1,6 +1,10 @@
 <template>
   <div
-      :class="[$style.component, 'p-3', 'mb-5']"
+      :class="{
+        $style.component: true,
+        'p-3': true,
+        'mb-5': true,
+      }"
   >
     <div v-show="!collapsed">
       <h5 class="text-center">
