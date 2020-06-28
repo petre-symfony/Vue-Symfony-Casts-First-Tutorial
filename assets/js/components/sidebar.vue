@@ -1,7 +1,6 @@
 <template>
   <div
-      :class="[$style.sidebar, 'p-3', 'mb-5']"
-      :style="{width: collapsed ? '70px' : 'auto'}"
+      :class="[$style.component, 'p-3', 'mb-5']"
   >
     <div v-show="!collapsed">
       <h5 class="text-center">
@@ -64,8 +63,12 @@
 
 <style lang="scss" module>
   @import '~styles/components/light-component.scss';
-  .sidebar {
+  .component {
     @include light-component;
+
+    &.collapsed {
+      width: 70px;
+    }
 
     ul {
       li a:hover {
