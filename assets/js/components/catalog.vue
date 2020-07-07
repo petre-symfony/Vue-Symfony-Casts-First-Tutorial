@@ -32,8 +32,10 @@
         legend: 'Shipping takes 10-12 weeks, and products probably won\'t work'
       };
     },
-    mounted(){
+    async mounted(){
       const response = await axios.get('/api/products');
+
+      console.log(response);
     }
   }
 </script>
