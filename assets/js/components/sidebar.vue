@@ -76,7 +76,7 @@
     },
     methods: {
       toggleCollapsed(){
-        this.collapsed = !this.collapsed;
+        this.$emit('toggle-collapsed');
       }
     }
   }
