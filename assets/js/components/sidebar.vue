@@ -14,12 +14,12 @@
           >All Products</a>
         </li>
         <li
-            v-for="(category, index) in categories"
-            :key="index"
+            v-for="(category) in categories"
+            :key="category['@id']"
             class="nav-item">
           <a
               class="nav-link"
-              :href="category.link"
+              :href="'/category/' + category.id"
           >{{ category.name }}</a>
         </li>
       </ul>
