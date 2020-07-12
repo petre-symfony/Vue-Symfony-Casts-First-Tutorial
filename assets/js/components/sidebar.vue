@@ -36,6 +36,8 @@
 </template>
 
 <script>
+  import axios from 'axios';
+
   export default {
     name: 'Sidebar',
     props: {
@@ -46,18 +48,14 @@
     },
     data(){
       return {
-        categories: [
-          {
-            name: 'Dot Matrix Printers',
-            link: '#'
-          },
-          {
-            name: 'Iomega Zip Drives',
-            link: '#'
-          }
-        ]
+        categories: [],
       }
     },
+    async created(){
+      const response = await axios.get('/api/categories');
+
+      this.categories = response.data['hydra:member'];
+    }
   }
 </script>
 
