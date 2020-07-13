@@ -72,14 +72,14 @@
 
 <style lang="scss" module>
   @import '~styles/components/light-component.scss';
-  .component {
+  .component :global{
     @include light-component;
 
     ul {
       li a:hover {
         background: $blue-component-link-hover
       }
-      :global li a.selected {
+      li a.selected {
         background: $light-component-border;
       }
     }
