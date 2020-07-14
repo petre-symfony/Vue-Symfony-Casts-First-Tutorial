@@ -43,6 +43,9 @@
 
 <script>
   import axios from 'axios';
+  import { getCurrentCategoryId } from "@/services/page-context";
+
+  '@/services/page-context'
 
   export default {
     name: 'Sidebar',
@@ -59,7 +62,7 @@
     },
     computed: {
       currentCategoryId(){
-        return window.currentCategoryId;
+        return getCurrentCategoryId();
       }
     },
     async created(){
