@@ -44,9 +44,9 @@
     async created(){
       this.loading = true;
 
-      let response;
+      let data;
       try {
-        response = await fetchProducts(this.currentCategoryId);
+        data = await fetchProducts(this.currentCategoryId);
 
         this.loading = false;
       } catch(e) {
@@ -55,7 +55,7 @@
         return;
       }
 
-      this.products = response.data['hydra:member'];
+      this.products = data['hydra:member'];
     }
   }
 </script>
