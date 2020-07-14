@@ -6,6 +6,9 @@
       <h5 class="text-center">
         Categories
       </h5>
+
+      <loading v-show="loading" />
+
       <ul class="nav flex-column mb4">
         <li class="nav-item">
           <a
@@ -43,9 +46,13 @@
 
 <script>
   import axios from 'axios';
+  import Loading from '@/components/loading';
 
   export default {
     name: 'Sidebar',
+    components: {
+      Loading,
+    },
     props: {
       collapsed: {
         type: Boolean,
@@ -59,6 +66,11 @@
     data(){
       return {
         categories: [],
+      }
+    },
+    computed: {
+      loading(){
+        return this.categories.length === 0;
       }
     },
     async created(){
