@@ -34,6 +34,7 @@
     data() {
       return {
         products: [],
+        loading: false,
         legend: 'Shipping takes 10-12 weeks, and products probably won\'t work'
       };
     },
@@ -42,11 +43,19 @@
       if (this.currentCategoryId){
         params.category = this.currentCategoryId;
       }
-      const response = await axios.get('/api/products', {
-        params
-      });
 
-      this.products = response.data['hydra:member'];
+      this.loading = true;
+
+      try {
+        const response = await axios.get('/api/products', {
+          params
+        });
+
+        this.loading = false;
+        this.products = response.data['hydra:member'];
+      } catch(e) {
+        this.loading = false;
+      }
     }
   }
 </script>
