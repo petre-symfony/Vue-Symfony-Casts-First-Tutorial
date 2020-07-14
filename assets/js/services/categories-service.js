@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 /**
- * @returns {Promise}
+ * @returns {Array}
  */
 export function fetchCategories() {
-  return axios.get('/api/categories');
+  return window.categories;
 }
