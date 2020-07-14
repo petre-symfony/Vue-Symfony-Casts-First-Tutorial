@@ -43,26 +43,22 @@
 
 <script>
   import axios from 'axios';
-  import { getCurrentCategoryId } from "@/services/page-context";
-
-  '@/services/page-context'
 
   export default {
     name: 'Sidebar',
     props: {
       collapsed: {
         type: Boolean,
-        required: true
+        required: true,
       },
+      currentCategoryId: {
+        type: String,
+        default: null,
+      }
     },
     data(){
       return {
         categories: [],
-      }
-    },
-    computed: {
-      currentCategoryId(){
-        return getCurrentCategoryId();
       }
     },
     async created(){
