@@ -43,7 +43,7 @@
         params.category = this.currentCategoryId;
       }
       const response = await axios.get('/api/products', {
-        params: params
+        params
       });
 
       this.products = response.data['hydra:member'];
