@@ -1,8 +1,14 @@
 import axios from 'axios';
 
 /**
- * @returns {Array}
+ * @returns {Promise}
  */
 export function fetchCategories() {
-  return window.categories;
+  return new Promise((resolve, reject) => {
+    resolve({
+      data: {
+        'hydra:member': window.categories,
+      },
+    });
+  });
 }

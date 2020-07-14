@@ -74,9 +74,9 @@
       }
     },
     async created(){
-      this.categories = await fetchCategories();
+      const response = await fetchCategories();
 
-      //this.categories = response.data['hydra:member'];
+      this.categories = response.data['hydra:member'];
     }
   }
 </script>
