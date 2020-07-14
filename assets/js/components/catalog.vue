@@ -21,6 +21,12 @@
 
   export default {
     name: 'Catalog',
+    props: {
+      currentCategoryId: {
+        type: String,
+        default: null,
+      }
+    },
     components: {
       LegendComponent,
       ProductList
@@ -32,7 +38,13 @@
       };
     },
     async created(){
-      const response = await axios.get('/api/products');
+      const params = {};
+      if (this.currentCategoryId){
+        params.category = this.currentCategoryId;
+      }
+      const response = await axios.get('/api/products', {
+        params: params
+      });
 
       this.products = response.data['hydra:member'];
     }
