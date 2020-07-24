@@ -2,6 +2,7 @@
   <div>
     <input
       :value="searchTerm"
+      @input="someMethod"
       class="form-control"
       placeholder="Search Products..."
       type="search"
