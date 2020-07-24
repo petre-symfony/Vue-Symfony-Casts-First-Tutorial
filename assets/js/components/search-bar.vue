@@ -2,10 +2,10 @@
   <div>
     <input
       :value="searchTerm"
-      @input="someMethod"
       class="form-control"
       placeholder="Search Products..."
       type="search"
+      @input="searchTerm = $event.target.value"
     />
   </div>
 </template>
