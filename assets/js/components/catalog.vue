@@ -1,11 +1,14 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-12">
+      <div class="col-3">
         <title-component
          :current-category-id="currentCategoryId"
          :categories="categories"
         />
+      </div>
+      <div class="col-9">
+        <search-bar />
       </div>
     </div>
     <product-list
@@ -23,6 +26,7 @@
   import ProductList from '@/components/product-list';
   import { fetchProducts } from '@/services/products-service';
   import TitleComponent from '@/components/title';
+  import SearchBar from '@/components/search-bar';
 
   export default {
     name: 'Catalog',
@@ -37,6 +41,7 @@
       }
     },
     components: {
+      SearchBar,
       LegendComponent,
       ProductList,
       TitleComponent
