@@ -14,7 +14,7 @@
       </div>
     </div>
     <product-list
-      :products="products"
+      :products="filteredProducts"
       :loading="loading"
     />
     <div class="row">
@@ -55,6 +55,17 @@
         loading: false,
         legend: 'Shipping takes 10-12 weeks, and products probably won\'t work'
       };
+    },
+    computed: {
+      filteredProducts(){
+        if(!this.searchTerm) {
+          return this.products;
+        }
+
+        return this.products.filter(product => (
+          product.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+        ));
+      }
     },
     async created(){
       this.loading = true;
