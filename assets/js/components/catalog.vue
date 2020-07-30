@@ -58,6 +58,11 @@
     created(){
       this.loadProducts(null);
     },
+    watch: {
+      currentCategoryId(newVal, oldVal) {
+        console.log(newVal, oldVal);
+      }
+    },
     methods: {
       /**
        * Handles a change in the searchTerm provided by the search bar and fetches new products
