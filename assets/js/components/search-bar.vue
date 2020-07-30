@@ -20,7 +20,9 @@
     },
     methods: {
       onInput(){
-        this.$emit('search-products', {term: this.searchTerm});
+        setTimeout(() => {
+          this.$emit('search-products', { term: this.searchTerm });
+        }, 200);
       }
     }
   }
