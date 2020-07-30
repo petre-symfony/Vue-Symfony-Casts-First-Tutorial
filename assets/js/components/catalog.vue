@@ -55,12 +55,16 @@
         legend: 'Shipping takes 10-12 weeks, and products probably won\'t work'
       };
     },
-    async created(){
+    created(){
       this.loadProducts(null);
     },
     methods: {
-      onSearchProducts(event) {
-        this.loadProducts(event.term);
+      /**
+       * Handles a change in the searchTerm provided by the search bar and fetches new products
+       * @param {string} term
+       */
+      onSearchProducts({ term }) {
+        this.loadProducts(term);
       },
       async loadProducts(searchTerms) {
         this.loading = true;
