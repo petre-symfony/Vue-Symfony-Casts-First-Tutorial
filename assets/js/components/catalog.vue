@@ -14,7 +14,7 @@
       </div>
     </div>
     <product-list
-      :products="filteredProducts"
+      :products="products"
       :loading="loading"
     />
     <div class="row">
@@ -51,40 +51,32 @@
     data() {
       return {
         products: [],
-        searchTerm: '',
         loading: false,
         legend: 'Shipping takes 10-12 weeks, and products probably won\'t work'
       };
     },
-    computed: {
-      async filteredProducts(){
-        if(!this.searchTerm) {
-          return this.products;
-        }
-
-        const response = await fetchProducts(this.currentCategoryId);
-        return response.data['hydra:member'];
-      }
-    },
     async created(){
-      this.loading = true;
-
-      let response;
-      try {
-        response = await fetchProducts(this.currentCategoryId);
-
-        this.loading = false;
-      } catch(e) {
-        this.loading = false;
-
-        return;
-      }
-
-      this.products = response.data['hydra:member'];
+      this.loadProducts(null);
     },
     methods: {
       onSearchProducts(event) {
-        this.searchTerm = event.term;
+        this.loadProducts(event.term);
+      },
+      async loadProducts(searchTerms) {
+        this.loading = true;
+
+        let response;
+        try {
+          response = await fetchProducts(this.currentCategoryId, searchTerms);
+
+          this.loading = false;
+        } catch(e) {
+          this.loading = false;
+
+          return;
+        }
+
+        this.products = response.data['hydra:member'];
       }
     }
   }
