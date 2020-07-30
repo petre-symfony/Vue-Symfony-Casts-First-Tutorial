@@ -42,6 +42,8 @@
       },
       eraseSearchTerm(){
         this.searchTerm = '';
+
+        this.$emit('search-products', { term: this.searchTerm });
       }
     }
   }
