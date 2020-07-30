@@ -16,13 +16,20 @@
     data() {
       return {
         searchTerm: '',
+        searchTimeout: null
       };
     },
     methods: {
       onInput(){
-        setTimeout(() => {
+        if(this.searchTimeout){
+          clearTimeout(this.searchTimeout);
+        }
+
+        this.searchTimeout = setTimeout(() => {
           this.$emit('search-products', { term: this.searchTerm });
-        }, 200);
+
+          this.searchTimeout = null;
+        }, 1000);
       }
     }
   }
