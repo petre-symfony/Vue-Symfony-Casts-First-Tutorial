@@ -59,8 +59,8 @@
       this.loadProducts(null);
     },
     watch: {
-      currentCategoryId(newVal, oldVal) {
-        console.log(newVal, oldVal);
+      currentCategoryId() {
+        this.loadProducts(null);
       }
     },
     methods: {
