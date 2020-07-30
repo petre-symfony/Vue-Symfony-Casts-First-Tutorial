@@ -57,14 +57,13 @@
       };
     },
     computed: {
-      filteredProducts(){
+      async filteredProducts(){
         if(!this.searchTerm) {
           return this.products;
         }
 
-        return this.products.filter(product => (
-          product.name.toLowerCase().includes(this.searchTerm.toLowerCase())
-        ));
+        const response = await fetchProducts(this.currentCategoryId);
+        return response.data['hydra:member'];
       }
     },
     async created(){
