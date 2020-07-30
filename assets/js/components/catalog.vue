@@ -52,15 +52,16 @@
       return {
         products: [],
         loading: false,
-        legend: 'Shipping takes 10-12 weeks, and products probably won\'t work'
+        legend: 'Shipping takes 10-12 weeks, and products probably won\'t work',
+        searchTerm: null,
       };
     },
     created(){
-      this.loadProducts(null);
+      this.loadProducts();
     },
     watch: {
       currentCategoryId() {
-        this.loadProducts(null);
+        this.loadProducts();
       }
     },
     methods: {
@@ -69,14 +70,15 @@
        * @param {string} term
        */
       onSearchProducts({ term }) {
-        this.loadProducts(term);
+        this.searchTerm = term;
+        this.loadProducts();
       },
-      async loadProducts(searchTerms) {
+      async loadProducts() {
         this.loading = true;
 
         let response;
         try {
-          response = await fetchProducts(this.currentCategoryId, searchTerms);
+          response = await fetchProducts(this.currentCategoryId, this.searchTerm);
 
           this.loading = false;
         } catch(e) {
