@@ -13,7 +13,7 @@
       </div>
       <div class="p-2 my-3 d-md-flex justify-content-between">
         <p class="p-0 d-inline">
-          <strong>${{ price }}</strong>
+          <strong>${{ formatPrice(product.price) }}</strong>
         </p>
         <button
             class="btn btn-info btn-sm"
@@ -30,6 +30,8 @@
 </template>
 
 <script>
+  import formatPrice from '@/helpers/format-price';
+
   export default {
     name: 'ProductCard',
     props: {
