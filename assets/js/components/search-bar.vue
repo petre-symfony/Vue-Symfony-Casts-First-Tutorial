@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="input-group">
     <input
       v-model="searchTerm"
       class="form-control"
@@ -7,6 +7,15 @@
       type="search"
       @input="onInput"
     />
+
+    <div v-show="searchTerm !== ''" class="input-group-append">
+      <button
+          class="btn btn-outline-secondary"
+          @click="eraseSearchTerm"
+      >
+        X
+      </button>
+    </div>
   </div>
 </template>
 
@@ -30,6 +39,9 @@
 
           this.searchTimeout = null;
         }, 1000);
+      },
+      eraseSearchTerm(){
+        this.searchTerm = '';
       }
     }
   }
